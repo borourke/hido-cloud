@@ -1,0 +1,1 @@
+$soda_client = SODA::Client.new({:domain => "datadiscovery.nlm.nih.gov", :app_token => "tSYZUU4ROS0dsnjRwlVUVLEb3"})
