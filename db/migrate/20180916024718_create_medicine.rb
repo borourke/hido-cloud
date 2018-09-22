@@ -5,6 +5,7 @@ class CreateMedicine < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :slot_id
       t.text :dosage
+      t.text :state
     end
   end
 end
