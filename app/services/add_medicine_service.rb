@@ -13,7 +13,7 @@ class AddMedicineService
     rx_info = result["rxstring"]
     dosage = '10 mg'
     # Delete anything in the current slot
-    Medicine.where(slot_id: slot_id).delete_all
-    Medicine.create(name: rx_name, slot_id: slot_id, description: rx_info, dosage: dosage)
+    Medicine.where(slot_id: slot_id).update_all(state: 'inactive')
+    Medicine.create(name: rx_name, slot_id: slot_id, description: rx_info, dosage: dosage, state: 'active')
   end
 end

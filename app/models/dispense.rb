@@ -1,0 +1,3 @@
+class Dispense < ApplicationRecord
+  
+end

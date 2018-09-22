@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Creating seeds..."
+puts Schedule.create(label: 'Morning', time: '8:30 AM').attributes
+puts Schedule.create(label: 'Afternoon', time: '12:30 PM').attributes
+puts Schedule.create(label: 'Evening', time: '7:30 PM').attributes
+puts "Finished seeds..."

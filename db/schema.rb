@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 2018_09_16_025436) do
   create_table "dispense_quantities", force: :cascade do |t|
     t.integer "medicine_id"
     t.integer "quantity"
+    t.integer "schedule_id"
   end
 
   create_table "dispenses", force: :cascade do |t|
     t.integer "medicine_id"
     t.integer "schedule_id"
-    t.datetime "schedule_date"
+    t.datetime "dispense_at"
     t.integer "dispense_quantities_id"
   end
 
@@ -34,12 +35,12 @@ ActiveRecord::Schema.define(version: 2018_09_16_025436) do
     t.text "description"
     t.integer "slot_id"
     t.text "dosage"
+    t.text "state"
   end
 
   create_table "schedules", force: :cascade do |t|
     t.text "label"
     t.text "time"
-    t.integer "dispense_quantities_id"
   end
 
 end

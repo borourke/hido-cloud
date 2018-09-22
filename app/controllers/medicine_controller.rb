@@ -1,6 +1,7 @@
 class MedicineController < ApplicationController
   def dispense
-    render :ping
+    @device_response = Medicine.dispense_single(slot_id: dispense_medicine_params[:slot_id]).status
+    render :dispense
   end
 
   def activate_barcode
@@ -13,9 +14,19 @@ class MedicineController < ApplicationController
     render :add_medicine
   end
 
+  def index
+    # Shows all medicine for each slot
+    @medicines = Medicine.format_for_device
+    render :index
+  end
+
   private
 
   def add_medicine_params
     params.permit(:slot_id, :barcode)
+  end
+
+  def dispense_medicine_params
+    params.permit(:slot_id)
   end
 end

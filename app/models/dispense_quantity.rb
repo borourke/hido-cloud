@@ -1,0 +1,2 @@
+class DispenseQuantity < ApplicationRecord
+end
