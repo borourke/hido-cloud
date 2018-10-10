@@ -8,7 +8,7 @@ class Schedule < ApplicationRecord
         dispense_quantity: quantity
       }
     end
-    conn = Faraday.new(url: 'http://requestbin.fullcontact.com/wzd0f5wz')
+    conn = Faraday.new(url: 'http://requestbin.fullcontact.com/12x8oo11')
     conn.post do |req|
       req.headers['Content-Type'] = 'application/json'
       req.body = { schedule: self, medicine: medicine }.to_json

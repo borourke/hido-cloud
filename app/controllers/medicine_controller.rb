@@ -20,6 +20,11 @@ class MedicineController < ApplicationController
     render :index
   end
 
+  def show
+    @medicine = Medicine.find_by(slot_id: params[:slot_id], active: 'true')
+    render :show
+  end
+
   private
 
   def add_medicine_params

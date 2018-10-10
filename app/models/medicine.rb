@@ -12,7 +12,7 @@ class Medicine < ApplicationRecord
   def self.dispense_single(slot_id:)
     med = Medicine.find_by(slot_id: slot_id, state: 'active')
     dispense = Dispense.create(medicine_id: med.id, dispense_at: Time.now)
-    conn = Faraday.new(url: 'http://requestbin.fullcontact.com/wzd0f5wz')
+    conn = Faraday.new(url: 'http://requestbin.fullcontact.com/12x8oo11')
     conn.post do |req|
       req.headers['Content-Type'] = 'application/json'
       req.body = { dispense_request: dispense, medicine: med }.to_json
